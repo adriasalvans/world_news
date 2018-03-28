@@ -20,13 +20,13 @@ class AddCategoriesTable extends Migration
         });
 
 
-        Schema::create('user_category', function(Blueprint $table){
+        Schema::create('category_user', function(Blueprint $table){
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('category_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
-            $table->timestamp();
+            $table->timestamps();
 
         });
 
