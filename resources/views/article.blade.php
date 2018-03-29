@@ -28,9 +28,6 @@
 
     <p class="new">{{$article -> content}} 
     
-    
-    
-    
     <br>
     gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
     <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
@@ -82,29 +79,7 @@
     gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
     <br>
     gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    
-    
-    
-    
-    
-    
-    
-    
+   
     </p>
 </div>
 </div>

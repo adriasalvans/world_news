@@ -17,3 +17,4 @@ Route::get('/category/{category}', 'CategoryPageController@view');
 Route::get('/article/{article}', 'ArticlePageController@view');
 
 
+Route::resource('users','UsersController');
