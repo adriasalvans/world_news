@@ -2,7 +2,36 @@
 
 @extends('layout')
 
+{{--@if({{$category ->name}}==='Home')
+@section('title', 'World news in real time')
+@else --}}
+
+@section('title')
+{{$category ->name}}
+@endsection
+
+{{--@endif--}}
+
 @section('content')
+
+
+<br>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+</nav>
+
+<!-- <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Library</li>
+    </ol>
+</nav> -->
+
+
+
+<br>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -113,6 +142,21 @@
     </div>
 </div>
 
+<center>
+<ul class="pagination" style="max-width: 247.89px;">
+    <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item active">
+        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+        </li>
+    <li class="page-item can"><a class="page-link" href="page2.html">2</a></li>
+    <li class="page-item can"><a class="page-link" href="page3.hmtl">3</a></li>
+    <li class="page-item can">
+        <a class="page-link" href="page2.html">Next</a>
+    </li>
+    </ul>
+</center>
 
 
 @endsection

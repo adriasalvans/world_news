@@ -12,11 +12,12 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link href="css/style.css" rel="stylesheet">
-<script src="scripts/script.js"></script>
+<link href="{{asset('css/style.css')}}" rel="stylesheet">
+<script src="{{asset('js/script.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body id="top">
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
@@ -67,7 +68,7 @@
         <div class="col-lg-12">
         <h1 class="display-3 text-center text-black mt-4">World News</h1>
         <div id="sub_title">
-            <h3 class="display-5 text-center text-black mt-4">World news in real time</h3>
+            <h3 class="display-5 text-center text-black mt-4">@yield('title')</h3>
         </div>
         </div>
     </div>
@@ -76,45 +77,13 @@
 
 
 <div class="container">
-    <br>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Home</li>
-        </ol>
-    </nav>
-    
-    <!-- <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Library</li>
-        </ol>
-    </nav> -->
-    
-    
-
-    <br>
+  
     <main role="main">
 
         @yield('content')
     
     </main>
 
-    
-    <center>
-    <ul class="pagination" style="max-width: 247.89px;">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item active">
-            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-            </li>
-        <li class="page-item can"><a class="page-link" href="page2.html">2</a></li>
-        <li class="page-item can"><a class="page-link" href="page3.hmtl">3</a></li>
-        <li class="page-item can">
-            <a class="page-link" href="page2.html">Next</a>
-        </li>
-        </ul>
-    </center>
 </div>
 
 <footer class="py-5">

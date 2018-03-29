@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/home', function () {
-    return view('index');
-});
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', 'CategoryPageController@view');
+Route::get('/category/{category}', 'CategoryPageController@view');
+Route::get('/article/{article}', 'ArticlePageController@view');
+
+
