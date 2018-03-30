@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Laracats\Flash\Flash;
+use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserEditRequest;
 
 class UsersController extends Controller
 {
@@ -34,7 +36,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $user = new User($request -> all());
         $user->password= bcrypt($request->password);
@@ -54,15 +56,6 @@ class UsersController extends Controller
         $user= User::find($id);
         return view('users.mypage')->with('user',$user);
     }
-
-
-    public function show2($id)
-    {
-        $user= User::find($id);
-        return view('users.settings')->with('user',$user);
-    }
-
-
 
     /**
      * Show the form for editing the specified resource.
@@ -84,7 +77,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserEditRequest $request, $id)
     {
         $user= User::find($id);
         $user->fill($request->all());
