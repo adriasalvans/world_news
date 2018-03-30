@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Laracats\Flash\Flash;
 
 class UsersController extends Controller
 {
@@ -13,8 +14,8 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {   
+        
     }
 
     /**
@@ -38,7 +39,8 @@ class UsersController extends Controller
         $user = new User($request -> all());
         $user->password= bcrypt($request->password);
         $user->save();
-        dd('created user');
+        flash("User ". $user->name . " created!")->success();
+        return redirect()->route('users.show',$user);
     }
 
     /**
@@ -49,8 +51,18 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user= User::find($id);
+        return view('users.mypage')->with('user',$user);
     }
+
+
+    public function show2($id)
+    {
+        $user= User::find($id);
+        return view('users.settings')->with('user',$user);
+    }
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -60,7 +72,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('users.edit')->with('user',$user);
+
     }
 
     /**
@@ -72,7 +86,12 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user= User::find($id);
+        $user->fill($request->all());
+        $user->save();
+        flash('User '. $user->name . ' edited')->warning();
+        return redirect()->route('users.show',$user);
+
     }
 
     /**
@@ -83,6 +102,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        flash('User '. $user->name . ' deleted')->error();
+        return redirect()->route('/');
+
     }
 }

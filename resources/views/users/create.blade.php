@@ -29,6 +29,8 @@
         {!! Form::password('password',['class'=> 'form-control', 'placeholder'=>'************','required']) !!}
     </div>
 
+
+
     <div class="form-group">
         {!! Form::submit('Signup', ['class' => 'btn btn-primary']) !!}
     </div>

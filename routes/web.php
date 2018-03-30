@@ -18,3 +18,7 @@ Route::get('/article/{article}', 'ArticlePageController@view');
 
 
 Route::resource('users','UsersController');
+Route::get('users/{id}/destroy',[
+    'uses' => 'UsersController@destroy',
+    'as' => 'users.destroy'
+]);

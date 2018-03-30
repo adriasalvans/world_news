@@ -23,7 +23,7 @@
 @include('elements.news_row')
 @endif
 
-@include('elements.pag')
+
 
 
 @endsection
