@@ -22,3 +22,7 @@ Route::get('users/{id}/destroy',[
     'uses' => 'UsersController@destroy',
     'as' => 'users.destroy'
 ]);
+
+Route::get('auth/login', 'Auth\LoginController@getLogin');
+Route::post('auth/login', 'Auth\LoginController@postLogin');
+Route::get('auth/logout', 'Auth\LoginController@getLogout');
