@@ -15,7 +15,6 @@
 
 
 @include('elements.news_row')
-@include('elements.news_row')
-@include('elements.news_row')
+
 
 @endsection
