@@ -7,6 +7,15 @@
 
 @section('content')
 
+<!-- @auth
+
+asdasd
+
+@else
+
+asdasdas
+
+@endif -->
 
 <br>
 <nav aria-label="breadcrumb">

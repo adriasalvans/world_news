@@ -11,17 +11,19 @@ class CategoryPageController extends Controller
 {
     public function view($id=null){
 
-        $articles = Article::orderBy('id','ASC')->paginate(6);
+        $articles = Article::orderBy('id','ASC')->paginate(9);
         $articles->each(function($articles){
             $articles->category;
         });
+    
 
-
-        if($id) {
-
+        if($id and $id !='1') {
+    
             $category= Category::find($id);
         }
         else{
+
+            
             $category= Category::find(1);
             
         }

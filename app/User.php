@@ -33,4 +33,9 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Category');
     }
     
+
+    public function articles()
+    {
+        return $this->categories->map->articles->collapse();
+    }
 }

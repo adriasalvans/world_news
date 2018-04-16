@@ -7,6 +7,7 @@ use App\User;
 use Laracats\Flash\Flash;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserEditRequest;
+use App\Category;
 
 class UsersController extends Controller
 {
@@ -27,7 +28,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        $categories = Category::orderBy('id','ASC');
+        return view('users.create')->with('categories',$categories);
     }
 
     /**
@@ -60,13 +62,11 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        $user = User::find($id);
-        return view('users.edit')->with('user',$user);
+        return view('users.edit');
 
     }
 
@@ -77,11 +77,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserEditRequest $request, $id)
+    public function update(UserEditRequest $request)
     {
-        $user= User::find($id);
-        $user->fill($request->all());
-        $user->save();
+        // $attr = $request->validate([...]);
+        auth()->user()->update($request->validated());
+
         flash('User '. $user->name . ' edited')->warning();
         return redirect()->route('users.show',$user);
 
@@ -90,15 +90,18 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $request)
     {
-        $user = User::find($id);
-        $user->delete();
-        flash('User '. $user->name . ' deleted')->error();
-        return redirect()->route('/');
+        auth()->user()->delete();
+
+        return rediret('/');
+
+        // $user = User::find($id);
+        // $user->delete();
+        // flash('User '. $user->name . ' deleted')->error();
+        // return redirect()->route('/')->with('sucess', 'asdasdas');
 
     }
 }

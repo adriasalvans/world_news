@@ -12,17 +12,23 @@
 */
 
 
+
 Route::get('/', 'CategoryPageController@view');
-Route::get('/category/{category}', 'CategoryPageController@view');
-Route::get('/article/{article}', 'ArticlePageController@view');
+Route::get('/category/{category?}', 'CategoryPageController@view')->name('category');
+Route::get('/article/{article}', 'ArticlePageController@view')->name('article');
 
+Route::get('users/{id}/destroy', 'UsersController@destroy')->name('users/destroy');
 
-Route::resource('users','UsersController');
-Route::get('users/{id}/destroy',[
-    'uses' => 'UsersController@destroy',
-    'as' => 'users.destroy'
-]);
+Route::auth();
 
-Route::get('auth/login', 'Auth\LoginController@getLogin');
-Route::post('auth/login', 'Auth\LoginController@postLogin');
-Route::get('auth/logout', 'Auth\LoginController@getLogout');
+Route::middleware('auth')->group(function () {
+    Route::get('mypage', function () {
+
+        $articles=auth()->user()->articles()->map->id;
+        $articles=App\Article::whereIn('id', $articles)->paginate(3);
+
+        return view('mypage', compact('articles'));
+    });
+    Route::post('mypage/edit', 'UsersController@edit')->name('mypage.edit');
+    Route::post('mypage/delete', 'UsersController@delete')->name('mypage.delete');
+});
