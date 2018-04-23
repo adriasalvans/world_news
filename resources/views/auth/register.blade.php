@@ -61,6 +61,36 @@
                             </div>
                         </div>
 
+                        <h5>Categories</h5>
+                        <br>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox" name="2"> <span class="label-text">World</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox" name="3"> <span class="label-text">Ecomomy</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox" name="4"> <span class="label-text">Politics</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox" name="5"> <span class="label-text">Sports</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label>
+                                <input type="checkbox" name="6"> <span class="label-text">Culture</span>
+                            </label>
+                        </div>
+
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -68,6 +98,10 @@
                                 </button>
                             </div>
                         </div>
+                      
+                        
+                       
+	               
                     </form>
                 </div>
             </div>

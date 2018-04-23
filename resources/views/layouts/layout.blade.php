@@ -21,8 +21,6 @@
 
 <body id="top">
 
-@include('elements.navbar')
-
 
 <header class="business-header">
     <div class="container">

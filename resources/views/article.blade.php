@@ -1,31 +1,45 @@
 
-@extends('layout')
+@extends('layouts.layout')
 
 @section('title')
 {{$article -> category ->name}}
 @endsection
 
-@section('content')
 
-<!-- @auth
-
-asdasd
+@auth
+@include('mypage.navbar_mypage')
 
 @else
+@include('elements.navbar')
+@endif
 
-asdasdas
 
-@endif -->
+@section('content')
+
+@auth
+<br>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Mypage</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Article</li>
+    </ol>
+</nav>
+<br>
+
+
+@else
 
 <br>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="./../../index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="world.html">{{$article -> category ->name}}</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('category') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('category',$article -> category ->id ) }}">{{$article -> category ->name}}</a></li>
         <li class="breadcrumb-item active" aria-current="page">Article</li>
     </ol>
     </nav>
 <br>
+
+@endif
 
 
 <div class="card">

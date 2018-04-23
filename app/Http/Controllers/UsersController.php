@@ -66,7 +66,7 @@ class UsersController extends Controller
      */
     public function edit()
     {
-        return view('users.edit');
+        return view('mypage.edit');
 
     }
 

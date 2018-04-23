@@ -15,7 +15,7 @@
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
 
-            <li><a class="btn btn-warning" href="{{ route('mypage.edit') }}">Edit</a></li>
+            <li><a class="btn btn-warning nav-link" href="{{ route('mypage.edit') }}">Settings</a></li>
             <li><a href="{{ route('mypage.delete') }}" onclick="return confirm('Deleting: Are you sure?')"
             class="btn btn-danger">Delete</a></li>
         
