@@ -4,7 +4,6 @@
 
 @include('mypage.my_navbar')
 
-
 @section('content')
 
 <br>

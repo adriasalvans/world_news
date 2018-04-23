@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::get('mypage', function () {
 
         $articles=auth()->user()->articles()->map->id;
-        $articles=App\Article::whereIn('id', $articles)->paginate(3);
+        $articles=App\Article::whereIn('id', $articles)->paginate(9);
 
         return view('mypage', compact('articles'));
     });

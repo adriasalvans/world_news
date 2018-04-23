@@ -7,7 +7,8 @@
 
 
 @auth
-@include('mypage.navbar_mypage')
+
+@include('mypage.my_navbar')
 
 @else
 @include('elements.navbar')
@@ -46,64 +47,10 @@
 
 <div class="card-body">
     <h2 class="card-title">{{$article -> title}}</h2>
-    <img class="news-img" src="{{$article -> image}}" alt="">
+    <img class="news-img" src="{{ asset('images/' . $article->image) }}" alt="">
     <br>
 
-    <p class="new">{{$article -> content}} 
-    
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    vgdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    vgdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-    <br>
-    gdfgfdgfdsferwtgertytruy6yutyutyuiuyiiuoiuopoipppoipoipoip
-   
-    </p>
+    <p class="new">{{$article -> content}} </p>
 </div>
 </div>
 <br>
