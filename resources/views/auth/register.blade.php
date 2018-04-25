@@ -61,8 +61,8 @@
                             </div>
                         </div>
 
-                        <h5>Categories</h5>
-                        <br>
+                        <div id="options" style="text-align: center;">
+                        <h5 style="font-weight: bold;">Categories</h5>
                         <div class="form-check">
                             <label>
                                 <input type="checkbox" name="2"> <span class="label-text">World</span>
@@ -88,8 +88,8 @@
                                 <input type="checkbox" name="6"> <span class="label-text">Culture</span>
                             </label>
                         </div>
-
-
+                        </div>
+                        <br>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
