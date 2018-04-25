@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
 
         return view('mypage', compact('articles'));
     });
-    Route::post('mypage/edit', 'UsersController@edit')->name('mypage.edit');
+    Route::get('mypage/settings', 'UsersController@settings')->name('mypage.settings');
+    Route::post('mypage/update', 'UsersController@update')->name('mypage.update');
     Route::post('mypage/delete', 'UsersController@delete')->name('mypage.delete');
 });

@@ -1,6 +1,4 @@
 
-
-
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
 
@@ -15,15 +13,13 @@
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
 
-            <li><a class="btn btn-warning nav-link" href="{{ route('mypage.edit') }}">Settings</a></li>
-            <li><a href="{{ route('mypage.delete') }}" onclick="return confirm('Deleting: Are you sure?')"
-            class="btn btn-danger">Delete</a></li>
-        
+            <li><a class="btn btn-warning nav-link" href="{{ route('mypage.settings') }}" style="color:white !important;">Settings</a></li>
+            
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
             </form>
             
-            <li><a class=" btn btn-danger nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <li><a class=" btn btn-danger nav-link" href="{{ route('logout') }}" style="color:white !important;" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             Logout</a>
             </li>
 

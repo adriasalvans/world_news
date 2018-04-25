@@ -14,6 +14,12 @@
 </nav>
 <br>
 
+
+<style>
+body{background-color: rgb(241, 175, 175);}
+a {color:black;}
+</style>
+
 @include('mypage.my_news')
 
 @endsection
