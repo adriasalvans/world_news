@@ -13,7 +13,7 @@
 
 
 
-Route::get('/', 'CategoryPageController@view');
+Route::get('/', 'CategoryPageController@view')->name('home');
 Route::get('/category/{category?}', 'CategoryPageController@view')->name('category');
 Route::get('/article/{article}', 'ArticlePageController@view')->name('article');
 
@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
         $articles=App\Article::whereIn('id', $articles)->paginate(9);
 
         return view('mypage', compact('articles'));
-    });
+    })->name('mypage');
     Route::get('mypage/settings', 'UsersController@settings')->name('mypage.settings');
     Route::post('mypage/update', 'UsersController@update')->name('mypage.update');
     Route::post('mypage/delete', 'UsersController@delete')->name('mypage.delete');

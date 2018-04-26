@@ -14,7 +14,7 @@ a {color:black;}
 <br>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Mypage</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('mypage') }}">Mypage</a></li>
     <li class="breadcrumb-item active" aria-current="page">My Settings</li>
     </ol>
 </nav>
@@ -28,9 +28,8 @@ a {color:black;}
 
     <div id="edit" style="text-align: center;">
         <h5 style="font-weight: bold;">Edit user</h5>
-        <form method="post" action="{{route('mypage.update', auth()->user())}}">
+        <form method="post" action="{{route('mypage.update')}}">
         {{ csrf_field() }}
-        {{ method_field('patch') }}
 
         <input type="text" name="name"  value="{{ auth()->user()->name }}" />
 
@@ -43,13 +42,17 @@ a {color:black;}
 <div class="form-group row">
 
     <div id="edit" style="text-align: center;">
-        <h5 style="font-weight: bold;">Delete Account</h5>
-        <a href="{{ route('mypage.delete') }}" onclick="return confirm('Deleting: Are you sure?')"
-        class="btn btn-danger">Delete</a>
 
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        <h5 style="font-weight: bold;">Delete Account</h5>
+        <form method="post" action="{{route('mypage.delete')}}">
         {{ csrf_field() }}
+        <button class="btn btn-danger" type="submit" onclick="return confirm('Deleting: Are you sure?')">Delete</button>
         </form>
+
+        <!-- <h5 style="font-weight: bold;">Delete Account</h5>
+        <a href="{{ route('mypage.delete') }}" onclick="return confirm('Deleting: Are you sure?')"
+        class="btn btn-danger">Delete</a> -->
+
     </div>
 
 </div>

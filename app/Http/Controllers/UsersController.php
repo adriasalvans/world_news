@@ -16,7 +16,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+
+    public function show()
     {   
         
     }
@@ -47,29 +49,6 @@ class UsersController extends Controller
         return redirect()->route('users.show',$user);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $user= User::find($id);
-        return view('users.mypage')->with('user',$user);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit()
-    {
-        return view('mypage.prova');
-
-    }
-
 
     public function settings()
     {
@@ -89,8 +68,8 @@ class UsersController extends Controller
         // $attr = $request->validate([...]);
         auth()->user()->update($request->validated());
 
-        flash('User '. $user->name . ' edited')->warning();
-        return redirect()->route('users.show',$user);
+        flash('User '. auth()->user()->name . ' edited')->warning();
+        return redirect()->route('mypage');
 
     }
 
@@ -101,9 +80,10 @@ class UsersController extends Controller
      */
     public function delete(Request $request)
     {
+        auth()->user()->categories()->detach();
         auth()->user()->delete();
-
-        return rediret('/');
+        
+        return redirect()->route('home');
 
         // $user = User::find($id);
         // $user->delete();
