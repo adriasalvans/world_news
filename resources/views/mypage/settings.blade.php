@@ -23,35 +23,36 @@ a {color:black;}
 <center>
 
 <div class="card">
-<div class="card-body" style="text-align: center;">
-<div class="form-group row">
+<div class="card-body">
+<div class="form-group">
 
     <div id="edit" style="text-align: center;">
+    <br>
         <h5 style="font-weight: bold;">Edit user</h5>
+        
         <form method="post" action="{{route('mypage.update')}}">
         {{ csrf_field() }}
-
+        <br>
         <input type="text" name="name"  value="{{ auth()->user()->name }}" />
-
+        
         <button type="submit">Send</button>
         </form>
     </div>
 
 </div>
-
-<div class="form-group row">
+<br>
+<hr style="border-width: 5px;">
+<div class="form-group">
 
     <div id="edit" style="text-align: center;">
-
+    <br><br>
         <h5 style="font-weight: bold;">Delete Account</h5>
+        
+        <br>
         <form method="post" action="{{route('mypage.delete')}}">
         {{ csrf_field() }}
         <button class="btn btn-danger" type="submit" onclick="return confirm('Deleting: Are you sure?')">Delete</button>
         </form>
-
-        <!-- <h5 style="font-weight: bold;">Delete Account</h5>
-        <a href="{{ route('mypage.delete') }}" onclick="return confirm('Deleting: Are you sure?')"
-        class="btn btn-danger">Delete</a> -->
 
     </div>
 
